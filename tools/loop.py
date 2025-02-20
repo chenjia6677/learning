@@ -1,3 +1,3 @@
 
 def test():
-    pass
+    return 12

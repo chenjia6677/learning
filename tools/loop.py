@@ -11,3 +11,20 @@ def nested_loop(source: List[Set[Any]], current: List[Any] = None, index: int = 
     """
     if current is None:
         current = [None] * len(source)
+
+    if index == len(source):  # 分配完毕
+        return [tuple(current)]
+
+    result = []
+    for enum in source[index]:
+        current[index] = enum
+        result.extend(nested_loop(source, current, index + 1))
+
+    return result
+
+
+if __name__ == '__main__':
+    source = [{'a', 'b'}, {1, 2}, {0.3, 0.4}]
+    target = nested_loop(source)
+    print(target)
+

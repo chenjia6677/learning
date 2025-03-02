@@ -109,6 +109,6 @@ class ClimStairs(object):
 
 if __name__ == '__main__':
     cs = ClimStairs()
-    cs.test(30)
+    print(cs.test(40))
 
 
